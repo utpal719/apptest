@@ -170,9 +170,9 @@
 
 <script type="text/javascript"> 
 
-$("#test").submit(function(){
+$("#test").submit(function(e){
 	
-	
+	e.preventDefault();
 	var name = $("#name").val();
 	var email=$("#email").val();
 	var phNum =$("#phNumber").val();
@@ -211,8 +211,9 @@ $("#test").submit(function(){
     	    
     	    contentType: "application/json; charset=utf-8",
     	   	dataType: "json",
+    	   	
     	   	success: function(data){ 
-               alert("Success");
+               $('#TableContainer').jtable('load');
            	},
     	    error: function(e){
     	    	
@@ -220,7 +221,7 @@ $("#test").submit(function(){
     	    }
     	 
     });
-    
+		
 });
 </script> 
 </body>
